@@ -1,5 +1,38 @@
 import "./style.css";
-import imgUrl from "./assets/images/calin.codes-under-construction.jpg";
+import favicon from "./assets/images/calin.codes-favicon.jpg";
+import logoDark from "./assets/images/calin.codes-logo-dark.jpg";
+import logoLight from "./assets/images/calin.codes-logo-light.jpg";
+import { app } from "./firebaseConfig.js";
 
-const background = document.querySelector("body");
-background.style.backgroundImage = `url(${imgUrl})`;
+import {
+  mobileMenuBtn,
+  toggleMenu,
+  textAnimation,
+  animationContainer,
+} from "./modulesJS/utility.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  app;
+});
+
+const faviconElement = document.getElementById("favicon");
+faviconElement.href = favicon;
+
+const logoElement = document.getElementById("logo");
+logoElement.src = logoDark;
+
+mobileMenuBtn.addEventListener("click", () => {
+  toggleMenu();
+});
+
+// text animation
+
+function checkAnimationContainer() {
+  if (animationContainer) {
+    textAnimation();
+  }
+}
+
+window.addEventListener("load", () => {
+  checkAnimationContainer();
+});
