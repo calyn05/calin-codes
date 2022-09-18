@@ -116,7 +116,7 @@ ol {
 
 html,
 body {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 input,
@@ -149,6 +149,7 @@ a:hover {
 }
 
 body {
+  justify-content: space-between;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -157,6 +158,23 @@ body {
   color: var(--main-txt-color);
   align-items: center;
   overflow-x: hidden;
+}
+/*  Scrollbar */
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: hsl(var(--alpha-highlight-color) / 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: hsl(var(--alpha-highlight-color) / 0.4);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--alpha-highlight-color) / 0.6);
 }
 
 /* Remove animations...... User prefered */
@@ -341,8 +359,8 @@ canvas {
 
 .image-animation__container {
   position: relative;
-  width: clamp(12rem, 80%, 40rem);
-  min-height: clamp(12rem, 70%, 20rem);
+  width: 90%;
+  min-height: 25vh;
   align-self: center;
   justify-self: center;
   box-shadow: hsl(var(--alpha-highlight-color) / 0.2) 0 4em 9em -1.5em,
@@ -474,11 +492,108 @@ canvas {
 
 .introduction {
   --flow-space: 2rem;
+  padding: 2rem;
 }
 
 .introduction > p {
   text-align: justify;
-  text-indent: 10vmin;
+  text-align: center;
+}
+
+.introduction q {
+  font-size: var(--fs-500);
+  font-style: italic;
+  text-align: center;
+  display: block;
+  margin: 2rem 0;
+}
+
+.responsive-text {
+  font-size: var(--fs-500);
+  text-decoration: underline;
+  text-decoration-color: hsl(var(--alpha-highlight-color) / 0.5);
+}
+
+.intro-role {
+  position: relative;
+  text-shadow: var(--highlight-color) 0 0 0.5em;
+  letter-spacing: 2px;
+  padding: 0.5rem;
+  font-size: clamp(1rem, 5vw, 2.5rem);
+  margin-bottom: 2em;
+}
+
+.letter {
+  position: absolute;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+}
+
+.letter:nth-child(2) {
+  left: calc(100% / 2 - 7.8ch);
+}
+
+.letter:nth-child(3) {
+  left: calc(100% / 2 - 6ch);
+}
+
+.letter:nth-child(4) {
+  left: calc(100% / 2 - 4.8ch);
+}
+
+.letter:nth-child(5) {
+  left: calc(100% / 2 - 2.4ch);
+}
+
+.letter:nth-child(6) {
+  left: calc(100% / 2 - 1.2ch);
+}
+
+.letter:nth-child(7) {
+  left: calc(100% / 2);
+}
+
+.letter:nth-child(8) {
+  left: calc(100% / 2 + 1.2ch);
+}
+
+.letter:nth-child(9) {
+  left: calc(100% / 2 + 2.4ch);
+}
+
+.letter:nth-child(10) {
+  left: calc(100% / 2 + 3.5ch);
+}
+
+.letter:nth-child(11) {
+  left: calc(100% / 2 + 4.8ch);
+}
+
+.letter:nth-child(12) {
+  left: calc(100% / 2 + 6ch);
+}
+
+.letter:nth-child(13) {
+  left: calc(100% / 2 + 7.2ch);
+}
+
+.letter:hover {
+  color: var(--secondary-light-color);
+  animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.8, 1.3);
+  }
+
+  50% {
+    transform: scale(1.2, 0.7);
+  }
+
+  100% {
+    transform: scale(0.7, 1.2);
+  }
 }
 
 .intro-name {
@@ -487,6 +602,7 @@ canvas {
   text-decoration: double underline;
   color: var(--main-background-color);
   text-shadow: var(--highlight-color) 0 0 0.5em;
+  letter-spacing: 0.1em;
 }
 
 .intro-name::before {
@@ -510,38 +626,45 @@ canvas {
   }
 }
 
-.intro-role {
-  position: relative;
-  text-shadow: var(--highlight-color) 0 0 0.5em;
-}
-
-@keyframes animate-role {
-  0% {
-    width: 0;
-    color: var(--main-txt-color);
-  }
-
-  100% {
-    width: 100%;
-    color: var(--main-txt-color);
-  }
-}
-
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  position: relative;
+  width: 50%;
+  align-self: center;
+  border-radius: 2vmin;
+  border: 1px solid var(--highlight-color);
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: var(--fw-600);
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: transparent;
+  color: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.25s;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  border-radius: inherit;
+  background-color: var(--secondary-light-color);
+  transition: all 0.35s ease-in-out;
+  z-index: -1;
+}
+
+button:hover::after {
+  width: 100%;
+  height: 100%;
+  border-color: hsl(var(--alpha-highlight-color) / 0.1);
 }
 
 button:hover {
-  border-color: #646cff;
+  color: var(--main-background-color);
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -678,4 +801,12 @@ button:focus-visible {
     transform: translateX(0);
     --gap-space: 2rem;
   }
+}
+
+footer {
+  width: 100%;
+  min-height: 5rem;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 1rem 0.5rem hsl(var(--alpha-highlight-color) / 0.2);
 }

@@ -11,6 +11,8 @@ import {
   animationContainer,
 } from "./modulesJS/utility.js";
 
+import { canvas, mouse, animate } from "./modulesJS/trailEffect.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   app;
 });
@@ -35,4 +37,28 @@ function checkAnimationContainer() {
 
 window.addEventListener("load", () => {
   checkAnimationContainer();
+});
+
+// trail effect
+
+function checkCanvas() {
+  if (canvas) {
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    window.addEventListener("mouseout", () => {
+      mouse.x = undefined;
+      mouse.y = undefined;
+    });
+
+    window.addEventListener("load", () => {
+      animate();
+    });
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  checkCanvas();
 });
