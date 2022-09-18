@@ -21,7 +21,7 @@
           <li><a href="/">Projects</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
-          <li>
+          <li class="logo-container">
             <a href="index.html">
               <img src="" alt="logo" id="logo" class="logo" />
             </a>
@@ -46,7 +46,7 @@
         </p>
       </section>
       <section class="introduction center-text flow">
-        <h2 class="fs-primary__heading ff-handlee">
+        <h2 class="introduction-heading fs-primary__heading ff-handlee">
           I am
           <span class="intro-name" id="intro-name" data-text="Calin!"
             >Calin!</span
@@ -63,10 +63,86 @@
           And to code
           <span class="responsive-text uppercase fw-600" id="responsive-text"
             >"responsive websites"</span
-          >, is one of my passions in web development.
+          >
+          is one of my biggest passions in web development.
         </p>
       </section>
-      <button>Contact</button>
+      <section class="contact-section flex-column">
+        <button>Contact</button>
+
+        <div class="social-media__container flex fs-body">
+          <a
+            href="https://www.linkedin.com/in/calin-szekely/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./assets/images/linkedin-round-icon.svg"
+              alt="linkedin"
+              id="linkedin"
+              title="LinkedIn"
+            />
+          </a>
+          <a
+            href="https://github.com/calyn05/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./assets/images/github-icon.svg"
+              alt="github"
+              id="github"
+              title="Github"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/calyn.I.am/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./assets/images/black-instagram-icon.svg"
+              alt="instagram"
+              id="instagram"
+              title="Instagram"
+            />
+          </a>
+
+          <a
+            href="mailto: contact@calin.codes"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./assets/images/email-round-solid-icon.svg"
+              alt="email"
+              id="email"
+              title="Send me an email"
+            />
+          </a>
+          <a
+            href="https://calyn05.github.io/resume-web-page/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Resume web page"
+          >
+            <img src="./assets/images/resume-cv-icon.svg" alt="cv" id="cv" />
+          </a>
+
+          <a
+            href="https://google.com/maps/place/Bucharest"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./assets/images/user-map-location-icon.svg"
+              alt="location"
+              id="location"
+              title="Bucharest, Romania"
+            />
+          </a>
+        </div>
+      </section>
       <canvas></canvas>
       <!-- Start text animation -->
       <div class="text-animation__container flex fs-body" data-visible="false">
@@ -79,57 +155,16 @@
       </div>
       <!-- End text animation -->
     </main>
-    <footer class="primary-footer flex-column flow">
-      <div class="footer__social-media flex">
-        <a
-          href="
-          https://www.linkedin.com/in/calin-szekely/
-        "
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="" alt="linkedin" id="linkedin" />
-        </a>
-        <a
-          href="
-
-        "
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="" alt="github" id="github" />
-        </a>
-        <a
-          href="
-          https://www.instagram.com/calin.codes/
-        "
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="" alt="instagram" id="instagram" />
-        </a>
-      </div>
-
-      <div class="footer__contact flex">
-        <a
-          href="mailto:
-
-        "
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="" alt="email" id="email" />
-        </a>
-        <a
-          href="tel:
-
-        "
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="" alt="phone" id="phone" />
-        </a>
-      </div>
+    <footer class="primary-footer flex-column flow center-text">
+      <nav>
+        <ul class="footer-navigation flex uppercase">
+          <li><a href="/">Main</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="fs-body ff-primary">&copy; 2022 Made with 💚 by Calin.Codes.</p>
     </footer>
   </body>
 </html>
