@@ -5,9 +5,10 @@
     "rewrites": [
       {
         "source": "./**",
-        "dinamicLinks": true,
-        "destination": "/index.html"
+        "dinamicLinks": true
       }
-    ]
+    ],
+    "cleanUrls": true,
+    "appAssociation": "AUTO"
   }
 }

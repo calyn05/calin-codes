@@ -21,7 +21,7 @@ function textAnimation() {
   animationContainer.setAttribute("data-visible", true);
   setTimeout(() => {
     animationContainer.setAttribute("data-visible", false);
-  }, 5000);
+  }, 3500);
 }
 
 export { mobileMenuBtn, toggleMenu, textAnimation, animationContainer };
@@ -30,21 +30,25 @@ export { mobileMenuBtn, toggleMenu, textAnimation, animationContainer };
 
 const imageContainer = document.querySelector(".image-animation__container");
 
-imageContainer.addEventListener("mousemove", (e) => {
-  const x = e.clientX / window.innerWidth;
-  const y = e.clientY / window.innerHeight;
-  imageContainer.style.transform = `rotateX(${-y * 20}deg) rotateY(${
-    -x * 20
-  }deg)`;
-});
+window.addEventListener("DOMContentLoaded", () => {
+  if (imageContainer) {
+    imageContainer.addEventListener("mousemove", (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      imageContainer.style.transform = `rotateX(${-y * 20}deg) rotateY(${
+        -x * 20
+      }deg)`;
 
-imageContainer.addEventListener("mouseenter", (e) => {
-  imageContainer.style.transition = ".2s ease";
-});
+      imageContainer.addEventListener("mouseenter", (e) => {
+        imageContainer.style.transition = ".2s ease";
+      });
 
-imageContainer.addEventListener("mouseleave", (e) => {
-  imageContainer.style.transition = "all 0.5s ease";
-  imageContainer.style.transform = `perspective(75em) rotateX(18deg)`;
+      imageContainer.addEventListener("mouseleave", (e) => {
+        imageContainer.style.transition = "all 0.5s ease";
+        imageContainer.style.transform = `perspective(75em) rotateX(18deg)`;
+      });
+    });
+  }
 });
 
 // Text hover effect
@@ -66,5 +70,8 @@ function responsiveTextHover() {
     }
   });
 }
-
-responsiveTextHover();
+window.addEventListener("DOMContentLoaded", () => {
+  if (introRoleText) {
+    responsiveTextHover();
+  }
+});

@@ -340,7 +340,7 @@ body::-webkit-scrollbar-thumb:hover {
   overflow: hidden;
   white-space: nowrap;
   color: var(--main-txt-color);
-  animation: animate 4s linear;
+  animation: animate 3s linear;
 }
 
 @keyframes animate {
@@ -416,8 +416,8 @@ canvas {
   overflow: hidden;
   white-space: nowrap;
   color: var(--main-txt-color);
-  animation: animate-hello 4s linear forwards;
-  animation-delay: 5s;
+  animation: animate-hello 3s linear forwards;
+  animation-delay: 4s;
 }
 
 @keyframes animate-hello {
@@ -443,8 +443,8 @@ canvas {
   clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);
   transform: translate(-30%, -90%) rotate(-150deg) scale(0);
   overflow: hidden;
-  animation: animate-div1 5s ease-in-out forwards;
-  animation-delay: 4.5s;
+  animation: animate-div1 4s ease-in-out forwards;
+  animation-delay: 4s;
   border-radius: 3rem;
 }
 
@@ -452,8 +452,8 @@ canvas {
   clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
   transform: translate(-10%, -90%) rotate(150deg) scale(0);
   overflow: hidden;
-  animation: animate-div2 4s ease-in-out forwards;
-  animation-delay: 6.5s;
+  animation: animate-div2 3s ease-in-out forwards;
+  animation-delay: 6s;
   border-radius: 3rem;
 }
 
@@ -461,8 +461,8 @@ canvas {
   clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0 100%);
   transform: translate(10%, -90%) rotate(150deg) scale(0);
   overflow: hidden;
-  animation: animate-div3 3s ease-in-out forwards;
-  animation-delay: 8.5s;
+  animation: animate-div3 2s ease-in-out forwards;
+  animation-delay: 7.5s;
   border-radius: 3rem;
 }
 
@@ -470,8 +470,8 @@ canvas {
   clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
   transform: translate(30%, -90%) rotate(-125deg) scale(0);
   overflow: hidden;
-  animation: animate-div4 2s ease-in-out forwards;
-  animation-delay: 10.5s;
+  animation: animate-div4 1.5s ease-in-out forwards;
+  animation-delay: 9s;
   border-radius: 3rem;
 }
 
@@ -651,8 +651,8 @@ canvas {
   position: absolute;
   overflow: hidden;
   white-space: nowrap;
-  animation: animate-name 4s linear forwards;
-  animation-delay: 9s;
+  animation: animate-name 3s linear forwards;
+  animation-delay: 7s;
 }
 
 @keyframes animate-name {
@@ -1074,5 +1074,38 @@ footer {
   .primary-footer::before {
     top: -4rem;
     right: -15%;
+  }
+}
+
+/* 404 page */
+
+.not-found__span {
+  font-size: clamp(6rem, 15vw + 5rem, 20rem);
+  color: hsl(var(--alpha-highlight-color) / 0.3);
+  display: block;
+  transform: rotateX(15deg);
+}
+
+.not-found__footer::before {
+  content: "<script  src='main.js' type='module'>console.log(error)</script>";
+}
+
+@media screen and (min-width: 64em) {
+  .not-found__social--media {
+    flex-direction: row;
+    padding: 0.5rem 1rem;
+    min-width: 6rem;
+  }
+
+  .not-found__footer::before {
+    top: -300%;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 64em) {
+  .not-found__footer::before {
+    top: -4rem;
+    right: 0;
   }
 }
