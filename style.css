@@ -17,6 +17,17 @@
 
   --glass-effect__color-dark: hsla(0, 0%, 0%, 0.7);
 
+  /* Light theme */
+
+  --light-theme__main-background-color: hsl(214, 64%, 82%);
+  --light-theme__section-background-color: hsl(214, 64%, 87%);
+  --light-theme__main-txt-color: hsl(233, 36%, 9%);
+  --light-theme__secondary-light-color: hsl(184, 75%, 25%);
+  --light-theme__secondary-dark-color: hsl(220, 94%, 7%);
+  --light-theme__highlight-color: hsl(267, 49%, 65%);
+  --light-theme__highlight-color-link: hsl(237, 100%, 10%);
+  --light-theme__highlight-color-link-hover: hsl(237, 100%, 40%);
+
   /*  Font  */
 
   --ff-primary: "Montserrat", sans-serif;
@@ -297,7 +308,7 @@ body::-webkit-scrollbar-thumb:hover {
 /* text animation  */
 
 .text-animation__container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   overflow: hidden;
@@ -347,8 +358,8 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 canvas {
-  position: absolute;
-  height: 100vh;
+  position: fixed;
+  height: 100%;
   width: 100vw;
   top: 0;
   left: 0;
@@ -430,7 +441,7 @@ canvas {
 
 .image-animation__container div:nth-child(1) {
   clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);
-  transform: translate(10px, -190px) rotate(-150deg) scale(0);
+  transform: translate(-30%, -90%) rotate(-150deg) scale(0);
   overflow: hidden;
   animation: animate-div1 5s ease-in-out forwards;
   animation-delay: 4.5s;
@@ -439,7 +450,7 @@ canvas {
 
 .image-animation__container div:nth-child(2) {
   clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
-  transform: translate(20px, -190px) rotate(150deg) scale(0);
+  transform: translate(-10%, -90%) rotate(150deg) scale(0);
   overflow: hidden;
   animation: animate-div2 4s ease-in-out forwards;
   animation-delay: 6.5s;
@@ -448,7 +459,7 @@ canvas {
 
 .image-animation__container div:nth-child(3) {
   clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0 100%);
-  transform: translate(0px, -190px) rotate(150deg) scale(0);
+  transform: translate(10%, -90%) rotate(150deg) scale(0);
   overflow: hidden;
   animation: animate-div3 3s ease-in-out forwards;
   animation-delay: 8.5s;
@@ -457,7 +468,7 @@ canvas {
 
 .image-animation__container div:nth-child(4) {
   clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
-  transform: translate(-10px, -190px) rotate(-125deg) scale(0);
+  transform: translate(30%, -90%) rotate(-125deg) scale(0);
   overflow: hidden;
   animation: animate-div4 2s ease-in-out forwards;
   animation-delay: 10.5s;
@@ -509,7 +520,8 @@ canvas {
 }
 
 .intro-text {
-  width: 40ch;
+  max-width: 40em;
+  text-align: center;
 }
 
 .responsive-text {
@@ -524,7 +536,32 @@ canvas {
   letter-spacing: 2px;
   padding: 0.5rem;
   font-size: clamp(1rem, 5vw, 2.5rem);
-  margin-bottom: 2em;
+  padding-bottom: 2em;
+  transform: perspective(75em) rotateX(18deg);
+}
+
+.intro-role::before {
+  content: "<h3>:hover";
+  position: absolute;
+  text-transform: lowercase;
+  font-size: var(--size-300);
+  font-family: var(--ff-handlee);
+  top: calc(-5% - 0.5rem);
+  left: calc(5% - 0.5rem);
+  color: hsl(var(--alpha-shadow-color) / 0.5);
+  z-index: -10;
+}
+
+.intro-role::after {
+  content: "</h3>";
+  position: absolute;
+  text-transform: lowercase;
+  font-size: var(--size-300);
+  font-family: var(--ff-handlee);
+  bottom: calc(-5% - 0.5rem);
+  right: calc(5% + 0.5rem);
+  color: hsl(var(--alpha-shadow-color) / 0.5);
+  z-index: -10;
 }
 
 .letter {
@@ -676,14 +713,16 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+    --main-background-color: var(--light-theme__main-background-color);
+    --section-background-color: var(--light-theme__section-background-color);
+    --main-txt-color: var(--light-theme__main-txt-color);
+    --secondary-light-color: var(--light-theme__secondary-light-color);
+    --secondary-dark-color: var(--light-theme__secondary-dark-color);
+    --highlight-color: var(--light-theme__highlight-color);
+    --highlight-color-link: var(--light-theme__highlight-color-link);
+    --highlight-color-link-hover: var(
+      --light-theme__highlight-color-link-hover
+    );
   }
 }
 
@@ -821,6 +860,23 @@ button:focus-visible {
   .footer-navigation {
     flex-wrap: wrap;
     justify-content: center;
+    font-size: clamp(0.725rem, 2vw + 0.2rem, 1.5rem);
+  }
+
+  .primary-footer::before {
+    content: "<script  src='main.js' type='module'></script>";
+    position: absolute;
+    width: 100%;
+    font-size: var(--size-300);
+    font-family: var(--ff-handlee);
+    color: hsl(var(--alpha-shadow-color) / 0.5);
+    top: -7rem;
+    transform: perspective(75em) rotateX(18deg);
+    z-index: -10;
+  }
+
+  .primary-footer > p {
+    font-size: clamp(0.725rem, 2vw + 0.2rem, 1.5rem);
   }
 }
 
@@ -877,6 +933,22 @@ button:focus-visible {
     min-height: 32vh;
   }
 
+  .image-animation__container div:nth-child(1) {
+    transform: translate(-60%, -90%) rotate(-150deg) scale(0);
+  }
+
+  .image-animation__container div:nth-child(2) {
+    transform: translate(-60%, -90%) rotate(150deg) scale(0);
+  }
+
+  .image-animation__container div:nth-child(3) {
+    transform: translate(-60%, -90%) rotate(150deg) scale(0);
+  }
+
+  .image-animation__container div:nth-child(4) {
+    transform: translate(-60%, -90%) rotate(-125deg) scale(0);
+  }
+
   .social-media__container img {
     width: 2.5rem;
     height: 2.5rem;
@@ -887,6 +959,18 @@ button:focus-visible {
 
   .social-media__container > * {
     margin: 0 0.5rem;
+  }
+
+  .primary-footer::before {
+    content: "<script  src='main.js' type='module'>import {class Particle} from trailEffect.js</script>";
+    position: absolute;
+    width: 100%;
+    top: -7.5rem;
+    font-size: var(--size-300);
+    font-family: var(--ff-handlee);
+    color: hsl(var(--alpha-shadow-color) / 0.5);
+    transform: perspective(75em) rotateX(18deg);
+    z-index: -10;
   }
 }
 
@@ -915,6 +999,7 @@ button:focus-visible {
 }
 
 footer {
+  position: relative;
   width: 100%;
   min-height: 3rem;
   align-items: center;
@@ -935,5 +1020,59 @@ footer {
     margin: 0;
     padding-right: 1rem;
     color: hsl(var(--alpha-highlight-color) / 0.3);
+  }
+
+  .image-animation__container {
+    min-height: 40vh;
+    max-width: 35vw;
+  }
+
+  .image-animation__container::after {
+    content: "@keyframes animate profile-image { 100% { transform: translate(....) } }";
+    position: absolute;
+    top: -25%;
+    left: 5%;
+    font-size: var(--size-300);
+    font-family: var(--ff-handlee);
+    color: hsl(var(--alpha-shadow-color) / 0.6);
+  }
+
+  .image-animation__container div:nth-child(1) {
+    transform: translate(-43%, -120%) rotate(-150deg) scale(0);
+  }
+
+  .image-animation__container div:nth-child(2) {
+    transform: translate(-43%, -120%) rotate(150deg) scale(0);
+  }
+
+  .image-animation__container div:nth-child(3) {
+    transform: translate(-43%, -120%) rotate(150deg) scale(0);
+  }
+
+  .image-animation__container div:nth-child(4) {
+    transform: translate(-43%, -120%) rotate(-125deg) scale(0);
+  }
+
+  .homepage-main {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+  }
+
+  .social-media__container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+    min-width: 6rem;
+  }
+
+  .footer-navigation {
+    --gap-space: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .primary-footer::before {
+    top: -4rem;
+    right: -15%;
   }
 }
