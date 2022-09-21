@@ -17,14 +17,47 @@ function toggleMenu() {
 
 const animationContainer = document.querySelector(".text-animation__container");
 
+const domLoadingTime = () => {
+  const perfEntries = performance.getEntriesByType("navigation");
+  const domTimeComplete = perfEntries[0].domComplete;
+  return domTimeComplete;
+};
+
+const root = document.documentElement;
+
 function textAnimation() {
   animationContainer.setAttribute("data-visible", true);
-  setTimeout(() => {
-    animationContainer.setAttribute("data-visible", false);
-  }, 3500);
+  if (domLoadingTime() < 3200) {
+    setTimeout(() => {
+      animationContainer.setAttribute("data-visible", false);
+    }, 3200);
+  } else {
+    root.style.setProperty("--loading-timer", domLoadingTime() / 1000 + "s");
+    setTimeout(() => {
+      animationContainer.setAttribute("data-visible", false);
+    }, domLoadingTime());
+  }
 }
 
-export { mobileMenuBtn, toggleMenu, textAnimation, animationContainer };
+// Loading animation
+
+const loadingContainer = document.querySelector(".loading-animation");
+
+function loadingAnimation() {
+  loadingContainer.setAttribute("data-visible", true);
+
+  root.style.setProperty("--loading-timer", domLoadingTime() / 1000 + "s");
+
+  setTimeout(() => {
+    loadingContainer.setAttribute("data-visible", false);
+  }, domLoadingTime());
+}
+
+window.addEventListener("load", () => {
+  if (loadingContainer !== null) {
+    loadingAnimation();
+  }
+});
 
 // Image tilt effect
 
@@ -75,3 +108,5 @@ window.addEventListener("DOMContentLoaded", () => {
     responsiveTextHover();
   }
 });
+
+export { mobileMenuBtn, toggleMenu, textAnimation, animationContainer };

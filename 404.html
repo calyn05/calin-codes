@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="" id="favicon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calin Codes</title>
-    <script type="module" src="../main.js"></script>
+    <script type="module" src="main.js"></script>
   </head>
   <body class="flex-column flow">
     <header class="primary-header flex">
@@ -18,13 +18,13 @@
           class="primary-navigation underlined-indicators flex-column uppercase"
         >
           <li>
-            <a href="../index.html">Home</a>
+            <a href="index.html">Home</a>
           </li>
-          <li><a href="./projects.html">Projects</a></li>
-          <li><a href="./about.html">About</a></li>
-          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="./pages/projects.html">Projects</a></li>
+          <li><a href="./pages/about.html">About</a></li>
+          <li><a href="./pages/contact.html">Contact</a></li>
           <li class="logo-container">
-            <a href="../index.html">
+            <a href="index.html">
               <img src="" alt="logo" id="logo" class="logo" />
             </a>
           </li>
@@ -53,7 +53,7 @@
             rel="noopener noreferrer"
           >
             <img
-              src="../assets/images/linkedin-round-icon.svg"
+              src="./assets/images/linkedin-round-icon.svg"
               alt="linkedin"
               id="linkedin"
               title="LinkedIn"
@@ -65,7 +65,7 @@
             rel="noopener noreferrer"
           >
             <img
-              src="../assets/images/github-icon.svg"
+              src="./assets/images/github-icon.svg"
               alt="github"
               id="github"
               title="Github"
@@ -77,7 +77,7 @@
             rel="noopener noreferrer"
           >
             <img
-              src="../assets/images/black-instagram-icon.svg"
+              src="./assets/images/black-instagram-icon.svg"
               alt="instagram"
               id="instagram"
               title="Instagram"
@@ -90,7 +90,7 @@
             rel="noopener noreferrer"
           >
             <img
-              src="../assets/images/email-round-solid-icon.svg"
+              src="./assets/images/email-round-solid-icon.svg"
               alt="email"
               id="email"
               title="Send me an email"
@@ -102,7 +102,7 @@
             rel="noopener noreferrer"
             title="Resume web page"
           >
-            <img src="../assets/images/resume-cv-icon.svg" alt="cv" id="cv" />
+            <img src="./assets/images/resume-cv-icon.svg" alt="cv" id="cv" />
           </a>
 
           <a
@@ -111,7 +111,7 @@
             rel="noopener noreferrer"
           >
             <img
-              src="../assets/images/user-map-location-icon.svg"
+              src="./assets/images/user-map-location-icon.svg"
               alt="location"
               id="location"
               title="Bucharest, Romania"
@@ -119,8 +119,11 @@
           </a>
         </div>
       </section>
-      <!-- Start text animation -->
-      <div class="text-animation__container flex fs-body" data-visible="false">
+      <!-- Loading text animation -->
+      <div
+        class="text-animation__container loading-animation flex fs-body"
+        data-visible="false"
+      >
         <p
           class="animation-text fs-primary__heading ff-handlee"
           data-text="calin.codes"
@@ -128,17 +131,17 @@
           calin.codes
         </p>
       </div>
-      <!-- End text animation -->
+      <!-- End loading animation -->
     </main>
     <footer
       class="primary-footer not-found__footer flex-column flow center-text"
     >
       <nav>
         <ul class="footer-navigation flex uppercase">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="./projects.html">Projects</a></li>
-          <li><a href="./about.html">About me</a></li>
-          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="./pages/projects.html">Projects</a></li>
+          <li><a href="./pages/about.html">About me</a></li>
+          <li><a href="./pages/contact.html">Contact</a></li>
         </ul>
       </nav>
       <p class="fs-body ff-primary">&copy; 2022 Made with 💚 by Calin.Codes.</p>

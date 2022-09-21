@@ -9,7 +9,7 @@ export default defineConfig({
         projects: resolve(__dirname, "./pages/projects.html"),
         about: resolve(__dirname, "./pages/about.html"),
         contact: resolve(__dirname, "./pages/contact.html"),
-        404: resolve(__dirname, "./pages/404.html"),
+        404: resolve(__dirname, "404.html"),
         firebaseConfig: resolve(__dirname, "firebaseConfig.js"),
       },
     },

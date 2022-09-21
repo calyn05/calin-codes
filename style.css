@@ -79,18 +79,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  /*  Media queries  */
+  /*  animation timer */
 
-  --mq-mobile: 32em;
-  --mq-tablet: 48em;
-  --mq-medium-laptop: 64em;
-  --mq-laptop: 90em;
-  --mq-big-screen: 120em;
-
-  /* Circle animation timer */
-
-  --first-half-circle-timer: 0s;
-  --second-half-circle-timer: 0s;
+  --loading-timer: 3s;
 }
 
 @media screen and (min-width: 32em) {
@@ -340,7 +331,7 @@ body::-webkit-scrollbar-thumb:hover {
   overflow: hidden;
   white-space: nowrap;
   color: var(--main-txt-color);
-  animation: animate 3s linear;
+  animation: animate var(--loading-timer) linear;
 }
 
 @keyframes animate {
@@ -415,14 +406,14 @@ canvas {
   position: absolute;
   overflow: hidden;
   white-space: nowrap;
-  color: var(--main-txt-color);
-  animation: animate-hello 3s linear forwards;
-  animation-delay: 4s;
+  animation: animate-hello 4s linear forwards;
+  animation-delay: var(--loading-timer);
 }
 
 @keyframes animate-hello {
   0% {
     width: 0;
+    color: var(--main-txt-color);
   }
 
   100% {
@@ -444,7 +435,7 @@ canvas {
   transform: translate(-30%, -90%) rotate(-150deg) scale(0);
   overflow: hidden;
   animation: animate-div1 4s ease-in-out forwards;
-  animation-delay: 4s;
+  animation-delay: var(--loading-timer);
   border-radius: 3rem;
 }
 
@@ -453,7 +444,7 @@ canvas {
   transform: translate(-10%, -90%) rotate(150deg) scale(0);
   overflow: hidden;
   animation: animate-div2 3s ease-in-out forwards;
-  animation-delay: 6s;
+  animation-delay: calc(var(--loading-timer) + 2s);
   border-radius: 3rem;
 }
 
@@ -462,7 +453,7 @@ canvas {
   transform: translate(10%, -90%) rotate(150deg) scale(0);
   overflow: hidden;
   animation: animate-div3 2s ease-in-out forwards;
-  animation-delay: 7.5s;
+  animation-delay: calc(var(--loading-timer) + 3.5s);
   border-radius: 3rem;
 }
 
@@ -471,7 +462,7 @@ canvas {
   transform: translate(30%, -90%) rotate(-125deg) scale(0);
   overflow: hidden;
   animation: animate-div4 1.5s ease-in-out forwards;
-  animation-delay: 9s;
+  animation-delay: calc(var(--loading-timer) + 5s);
   border-radius: 3rem;
 }
 
@@ -723,6 +714,10 @@ button:focus-visible {
     --highlight-color-link-hover: var(
       --light-theme__highlight-color-link-hover
     );
+  }
+
+  .logo {
+    content: url(./assets/images/calin.codes-logo-light.jpg);
   }
 }
 
@@ -1108,4 +1103,142 @@ footer {
     top: -4rem;
     right: 0;
   }
+}
+
+/* Projects page */
+
+.projects-figure {
+  align-self: center;
+  max-width: 60%;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-quote {
+  align-self: center;
+  text-align: justify;
+}
+
+.projects-quote > p::after {
+  content: "\201D";
+}
+
+.projects-quote > p::before {
+  content: "\201C";
+}
+
+figcaption:has(.projects-quote__cite) {
+  align-self: flex-end;
+}
+
+article {
+  padding: 1rem;
+}
+
+.introduction__heading {
+  font-size: clamp(1.5rem, 5vw + 1rem, 2.5rem);
+  position: relative;
+  width: fit-content;
+  align-self: center;
+  text-decoration: double underline;
+  color: var(--main-background-color);
+  text-shadow: var(--highlight-color) 0 0 0.3rem;
+  letter-spacing: 0.2rem;
+}
+
+.introduction__heading::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: animate-name 2s linear forwards;
+  animation-delay: 1s;
+}
+
+.project-title {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-700);
+}
+
+.projects-heading__letter {
+  position: absolute;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+}
+
+.projects-heading__letter:hover {
+  color: var(--secondary-light-color);
+  animation: bounce 0.5s ease-in-out;
+}
+
+h4 {
+  position: relative;
+  width: fit-content;
+  align-self: center;
+}
+
+h4::before {
+  content: "<a target: _blank>";
+  position: absolute;
+  top: -80%;
+  left: -35%;
+  font-size: var(--size-300);
+  font-family: var(--ff-handlee);
+  color: hsl(var(--alpha-shadow-color) / 0.6);
+  transform: perspective(75em) rotateX(25deg);
+  text-transform: lowercase;
+}
+
+h4::after {
+  content: "</a>";
+  position: absolute;
+  bottom: -70%;
+  right: -20%;
+  font-size: var(--size-300);
+  font-family: var(--ff-handlee);
+  color: hsl(var(--alpha-shadow-color) / 0.6);
+  transform: perspective(75em) rotateX(25deg);
+  text-transform: lowercase;
+}
+
+.project-description {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+  text-align: justify;
+  text-indent: 1rem;
+}
+
+article a {
+  position: relative;
+  width: fit-content;
+  align-self: center;
+}
+
+article a:hover {
+  color: var(--highlight-color-link);
+}
+
+article > a::before {
+  content: "<a href=''>";
+  position: absolute;
+  top: -80%;
+  left: -35%;
+  font-size: var(--size-300);
+  font-family: var(--ff-handlee);
+  color: hsl(var(--alpha-shadow-color) / 0.6);
+  transform: perspective(75em) rotateX(25deg);
+  text-transform: lowercase;
+}
+
+article > a::after {
+  content: "</a>";
+  position: absolute;
+  bottom: -70%;
+  right: -20%;
+  font-size: var(--size-300);
+  font-family: var(--ff-handlee);
+  color: hsl(var(--alpha-shadow-color) / 0.6);
+  transform: perspective(75em) rotateX(25deg);
+  text-transform: lowercase;
 }
