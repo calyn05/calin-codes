@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../../assets/images/calin.codes-favicon.jpg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calin Codes</title>
+    <script type="module" src="../../main.js"></script>
+  </head>
+  <body class="flex-column flow">
+    <header class="primary-header flex">
+      <h1 class="fs-primary__heading ff-handlee">calin.codes</h1>
+      <div class="hamburger-menu__btn flex">
+        <div class="mobile-nav__toggle"></div>
+      </div>
+      <nav>
+        <ul
+          class="primary-navigation underlined-indicators flex-column uppercase"
+        >
+          <li>
+            <a href="../../index.html">Home</a>
+          </li>
+          <li>
+            <a href="../projects.html">Projects</a>
+          </li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li class="logo-container">
+            <a href="../../index.html">
+              <img src="" alt="logo" id="logo" class="logo" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="homepage-main projects-main flex-column flow">
+      <figure class="projects-figure flex-column">
+        <blockquote
+          cite="https://seochatter.com/web-development-quotes/"
+          class="projects-quote ff-handlee"
+        >
+          <p>It's not a bug - it's an undocumented feature.</p>
+        </blockquote>
+        <figcaption>
+          <cite class="projects-quote__cite"
+            ><a
+              href="https://en.wikipedia.org/wiki/Anonymous"
+              rel="noopener noreferrer external"
+              target="_blank"
+              >Anonymous</a
+            ></cite
+          >
+        </figcaption>
+      </figure>
+      <picture class="banner-container">
+        <source
+          media="(min-width: 64em)"
+          srcset="../../assets/images/calin.codes-projects-image--@3.jpg"
+        />
+        <source
+          media="(min-width: 32em)"
+          srcset="../../assets/images/calin.codes-projects-image--@2.jpg"
+        />
+        <img
+          src="../../assets/images/calin.codes-projects-image--@1.jpg"
+          alt="projects-banner"
+        />
+      </picture>
+
+      <section class="projects-section center-text flow">
+        <header class="flex-column">
+          <h2
+            class="introduction__heading fs-primary__heading ff-handlee"
+            data-text="Calin.Codes"
+          >
+            Calin.Codes
+          </h2>
+        </header>
+
+        <article class="flex-column flow">
+          <h3 class="uppercase">
+            <a href="../about.html">Calin.Codes</a>
+          </h3>
+          <p class="project-description">
+            Of course, I had to create a website for myself. More specifically,
+            I created this website as a portfolio website, to showcase some of
+            my projects and <a href="../about.html">skills</a>.
+          </p>
+          <p class="project-description">
+            This is my latest project, but it is still a work in progress with
+            many ideas to implement in the future.
+          </p>
+          <p class="project-description">
+            I used HTML, CSS, and Vanilla JavaScript to create this portfolio
+            website. I also used ViteJS as a build tool, and Firebase as a
+            back-end service.
+          </p>
+          <p class="project-description">
+            It is build with a mobile-first approach, and it is responsive on
+            all devices. I used CSS Grid and Flexbox to create the layout, and I
+            like to use varibles and utility classes to make the code more
+            readable, reusable, and maintainable.
+          </p>
+          <a class="uppercase" href="../about.html">About Me</a>
+        </article>
+        <form action="../projects.html">
+          <button>Projects</button>
+        </form>
+      </section>
+
+      <section class="contact-section flex-column">
+        <div class="social-media__container flex fs-body">
+          <a
+            href="https://www.linkedin.com/in/calin-szekely/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../../assets/images/linkedin-round-icon.svg"
+              alt="linkedin"
+              id="linkedin"
+              title="LinkedIn"
+            />
+          </a>
+          <a
+            href="https://github.com/calyn05/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../../assets/images/github-icon.svg"
+              alt="github"
+              id="github"
+              title="Github"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/calyn.I.am/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../../assets/images/black-instagram-icon.svg"
+              alt="instagram"
+              id="instagram"
+              title="Instagram"
+            />
+          </a>
+
+          <a
+            href="mailto: contact@calin.codes"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../../assets/images/email-round-solid-icon.svg"
+              alt="email"
+              id="email"
+              title="Send me an email"
+            />
+          </a>
+          <a
+            href="https://calyn05.github.io/resume-web-page/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Resume web page"
+          >
+            <img
+              src="../../assets/images/resume-cv-icon.svg"
+              alt="cv"
+              id="cv"
+            />
+          </a>
+
+          <a
+            href="https://google.com/maps/place/Bucharest"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../../assets/images/user-map-location-icon.svg"
+              alt="location"
+              id="location"
+              title="Bucharest, Romania"
+            />
+          </a>
+        </div>
+      </section>
+      <!-- Loading text animation -->
+      <div
+        class="text-animation__container loading-animation flex fs-body"
+        data-visible="false"
+      >
+        <p
+          class="animation-text fs-primary__heading ff-handlee"
+          data-text="calin.codes"
+        >
+          calin.codes
+        </p>
+      </div>
+      <!-- End loading animation -->
+    </main>
+    <footer class="primary-footer project-footer flex-column flow center-text">
+      <nav>
+        <ul class="footer-navigation flex uppercase">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../about.html">About me</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="fs-body ff-primary">&copy; 2022 Made with 💚 by Calin.Codes.</p>
+    </footer>
+  </body>
+</html>

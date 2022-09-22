@@ -1,7 +1,6 @@
 import "./style.css";
 import favicon from "./assets/images/calin.codes-favicon.jpg";
 import logoDark from "./assets/images/calin.codes-logo-dark.jpg";
-import logoLight from "./assets/images/calin.codes-logo-light.jpg";
 import { app } from "./firebaseConfig.js";
 
 import {
@@ -17,11 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
   app;
 });
 
-const faviconElement = document.getElementById("favicon");
-faviconElement.href = favicon;
-
-const logoElement = document.getElementById("logo");
-logoElement.src = logoDark;
+window.addEventListener("load", () => {
+  const faviconElement = document.getElementById("favicon");
+  const logoElement = document.getElementById("logo");
+  logoElement.src = logoDark;
+  if (faviconElement !== null) {
+    faviconElement.href = favicon;
+  }
+});
 
 mobileMenuBtn.addEventListener("click", () => {
   toggleMenu();

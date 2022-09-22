@@ -15,7 +15,7 @@
   --alpha-highlight-color: 267 49% 45%;
   --alpha-shadow-color: 237 100% 70%;
 
-  --glass-effect__color-dark: hsla(0, 0%, 0%, 0.7);
+  --glass-effect__color-dark: hsla(0, 0%, 0%, 0.9);
 
   /* Light theme */
 
@@ -1179,7 +1179,7 @@ h4 {
 }
 
 h4::before {
-  content: "<a target: _blank>";
+  content: "<a target: >";
   position: absolute;
   top: -80%;
   left: -35%;
@@ -1216,14 +1216,14 @@ article a {
 }
 
 article a:hover {
-  color: var(--highlight-color-link);
+  color: var(--highlight-color-link-hover);
 }
 
 article > a::before {
-  content: "<a href=''>";
+  content: "<a href: >";
   position: absolute;
   top: -80%;
-  left: -35%;
+  left: -45%;
   font-size: var(--size-300);
   font-family: var(--ff-handlee);
   color: hsl(var(--alpha-shadow-color) / 0.6);
@@ -1234,11 +1234,149 @@ article > a::before {
 article > a::after {
   content: "</a>";
   position: absolute;
-  bottom: -70%;
-  right: -20%;
+  bottom: -90%;
+  right: -35%;
   font-size: var(--size-300);
   font-family: var(--ff-handlee);
   color: hsl(var(--alpha-shadow-color) / 0.6);
   transform: perspective(75em) rotateX(25deg);
   text-transform: lowercase;
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2vmin;
+  transform: perspective(75em) rotateX(10deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.banner-container img {
+  width: 100%;
+  max-height: 15rem;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 2vmin;
+  box-shadow: hsl(var(--alpha-highlight-color) / 0.2) 0 4em 9em -1.5em,
+    hsl(var(--alpha-shadow-color) / 0.5) 0 2em 4em -2em;
+  transition: object-position 3s ease-in-out;
+}
+
+.banner-container:hover {
+  transform: perspective(75em) rotateX(0deg);
+}
+
+.banner-container:hover img {
+  object-position: center;
+}
+
+@media screen and (min-width: 32em) {
+  .projects-btn {
+    max-width: 15rem;
+  }
+
+  .banner-container {
+    max-width: 85%;
+    align-self: center;
+  }
+
+  .projects-section {
+    padding: clamp(1rem, 3vw + 1rem, 2.5rem);
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .projects-main {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .projects-main__header {
+    width: 100%;
+  }
+
+  .projects-figure {
+    max-width: 100%;
+  }
+
+  .banner-container {
+    max-width: 80%;
+    height: 40vh;
+    align-self: center;
+  }
+
+  .banner-container img {
+    max-height: 100%;
+  }
+
+  .projects-section {
+    padding: 2rem;
+  }
+
+  .articles-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    --gap-space: 2rem;
+    --flow-space: 0;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  .articles-section__item {
+    justify-content: space-between;
+  }
+
+  .contact-section__projects {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .projects-footer::before {
+    top: -2rem;
+    right: 0;
+  }
+}
+
+/*  Project page */
+
+h3 > a {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-600);
+}
+
+h3 > a::before {
+  content: "<a href='...'>";
+  position: absolute;
+  top: -100%;
+  left: -45%;
+  font-size: var(--size-300);
+  font-family: var(--ff-handlee);
+  color: hsl(var(--alpha-shadow-color) / 0.6);
+  transform: perspective(75em) rotateX(25deg);
+  text-transform: lowercase;
+}
+
+h3 > a::after {
+  content: "</a>";
+  position: absolute;
+  bottom: -100%;
+  right: -30%;
+  font-size: var(--size-300);
+  font-family: var(--ff-handlee);
+  color: hsl(var(--alpha-shadow-color) / 0.6);
+  transform: perspective(75em) rotateX(25deg);
+  text-transform: lowercase;
+}
+
+.project-footer::before {
+  top: -1.5rem;
 }
