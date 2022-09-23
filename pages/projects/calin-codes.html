@@ -85,34 +85,37 @@
           <h3 class="uppercase">
             <a href="../about.html">Calin.Codes</a>
           </h3>
-          <p class="project-description">
-            Of course, I had to create a website for myself. More specifically,
-            I created this website as a portfolio website, to showcase some of
-            my projects and <a href="../about.html">skills</a>.
-          </p>
-          <p class="project-description">
-            This is my latest project, but it is still a work in progress with
-            many ideas to implement in the future.
-          </p>
-          <p class="project-description">
-            I used HTML, CSS, and Vanilla JavaScript to create this portfolio
-            website. I also used ViteJS as a build tool, and Firebase as a
-            back-end service.
-          </p>
-          <p class="project-description">
-            It is build with a mobile-first approach, and it is responsive on
-            all devices. I used CSS Grid and Flexbox to create the layout, and I
-            like to use varibles and utility classes to make the code more
-            readable, reusable, and maintainable.
-          </p>
+          <div class="project-description__container flex-column flow">
+            <p class="project-description">
+              Of course, I had to create a website for myself. More
+              specifically, I created this website as a portfolio website, to
+              showcase some of my projects and
+              <a href="../about.html">skills</a>.
+            </p>
+            <p class="project-description">
+              I used HTML, CSS, and Vanilla JavaScript to create this portfolio
+              website. I also used ViteJS as a build tool, and Firebase as a
+              back-end service.
+            </p>
+            <p class="project-description">
+              It is built with a mobile-first approach, making it responsive on
+              all devices. I used CSS Grid and Flexbox to create the layout, and
+              I like to use variables and utility classes to make the code more
+              readable, reusable, and maintainable.
+            </p>
+            <p class="project-description">
+              This is my latest project, but it is still a work in progress with
+              many ideas to implement in the future.
+            </p>
+          </div>
           <a class="uppercase" href="../about.html">About Me</a>
         </article>
-        <form action="../projects.html">
-          <button>Projects</button>
+        <form action="./shift-manager.html">
+          <button class="projects-btn">Next Project</button>
         </form>
       </section>
 
-      <section class="contact-section flex-column">
+      <section class="contact-section__projects flex-column">
         <div class="social-media__container flex fs-body">
           <a
             href="https://www.linkedin.com/in/calin-szekely/"

@@ -1339,11 +1339,16 @@ article > a::after {
     top: 50%;
     transform: translateY(-50%);
   }
+}
 
-  .projects-footer::before {
-    top: -2rem;
-    right: 0;
-  }
+.projects-footer::before {
+  top: -2rem;
+  right: 0;
+}
+
+.articles-section__item {
+  box-shadow: hsl(var(--alpha-shadow-color) / 0.2) 0 2em 4em -2em;
+  border-radius: 1vmin;
 }
 
 /*  Project page */
@@ -1380,3 +1385,265 @@ h3 > a::after {
 .project-footer::before {
   top: -1.5rem;
 }
+
+@media (min-width: 32em) and (max-width: 64em) {
+  .project-page__section {
+    padding: 2rem;
+    max-width: 70ch;
+  }
+  .project-description__container {
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .project-page__section {
+    padding: 2rem;
+  }
+
+  .project-description__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    --gap-space: 2rem;
+    padding: 1rem;
+  }
+
+  .project-description__container > * {
+    margin-top: 0;
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  .project-footer::before {
+    right: 0;
+  }
+}
+
+.project-description__container > p {
+  box-shadow: hsl(var(--alpha-shadow-color) / 0.2) 0 2em 4em -2em;
+  border-radius: 1vmin;
+}
+
+/* About page */
+
+.about-figure {
+  max-width: 50%;
+  align-self: center;
+}
+
+.intro-name__about {
+  display: block;
+  width: fit-content;
+  align-self: center;
+}
+
+@media screen and (min-width: 64em) {
+  .about-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-inline-end: 2rem;
+  }
+
+  .about-main__header {
+    width: 100%;
+    grid-column-end: 3;
+  }
+
+  .about-figure {
+    width: 100%;
+  }
+
+  .about-image__animation--container {
+    height: 80%;
+  }
+
+  .about-image__animation--container::after {
+    content: "clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);";
+    position: absolute;
+    top: -25%;
+    left: 5%;
+    font-size: var(--size-300);
+    font-family: var(--ff-handlee);
+    color: hsl(var(--alpha-shadow-color) / 0.6);
+  }
+
+  .about-content {
+    padding: 2rem;
+    grid-column: 1 / 3;
+    text-align: justify;
+    text-indent: 2rem;
+  }
+}
+
+.about-footer::before {
+  top: -2rem;
+  right: 0;
+}
+
+.tech-list {
+  flex-wrap: wrap;
+}
+
+/* About image container animation */
+
+.about-image__animation--container {
+  position: relative;
+  width: 90%;
+  min-height: 30vh;
+  align-self: center;
+  justify-self: center;
+  box-shadow: hsl(var(--alpha-highlight-color) / 0.2) 0 4em 9em -1.5em,
+    hsl(var(--alpha-shadow-color) / 0.5) 0 2em 4em -2em;
+  border-radius: 3rem;
+  transform: perspective(75em) rotateX(18deg);
+  border: 1px solid;
+  border-color: hsl(var(--alpha-highlight-color) / 0.1)
+    hsl(var(--alpha-highlight-color) / 0.2)
+    hsl(var(--alpha-highlight-color) / 0.3)
+    hsl(var(--alpha-highlight-color) / 0.4);
+  transition: all 0.5s ease-in-out;
+}
+
+.about-image__animation--container:hover {
+  transform: perspective(75em) rotateX(0deg);
+}
+
+.about-image__animation--container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsl(var(--alpha-highlight-color) / 0.2);
+  z-index: 10;
+  border-radius: 3rem;
+}
+
+.about-image__animation--container div {
+  position: absolute;
+  inset: 0;
+  background: url(./assets/images/calin.codes-profile-image-mobile.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.about-image__animation--container div:nth-child(1) {
+  clip-path: polygon(50% 0, 0 0, 0 50%);
+  transform: translate(-30%, -90%) rotate(-150deg) scale(0);
+  transform: translate(-30%, -90%) rotate(-150deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div1 8s ease-in-out forwards;
+  animation-delay: var(--loading-timer);
+  border-radius: 3rem;
+}
+
+.about-image__animation--container div:nth-child(2) {
+  clip-path: polygon(50% 0, 50% 50%, 0 50%);
+  transform: translate(-10%, -90%) rotate(150deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div2 7s ease-in-out forwards;
+  animation-delay: calc(var(--loading-timer) + 2s);
+}
+
+.about-image__animation--container div:nth-child(3) {
+  clip-path: polygon(50% 0, 50% 50%, 100% 50%);
+  transform: translate(10%, -90%) rotate(150deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div3 6s ease-in-out forwards;
+  animation-delay: calc(var(--loading-timer) + 3.5s);
+}
+
+.about-image__animation--container div:nth-child(4) {
+  clip-path: polygon(50% 0, 100% 0, 100% 50%);
+  transform: translate(30%, -90%) rotate(-125deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div4 5s ease-in-out forwards;
+  animation-delay: calc(var(--loading-timer) + 5s);
+  border-radius: 3rem;
+}
+
+.about-image__animation--container div:nth-child(5) {
+  clip-path: polygon(50% 100%, 100% 100%, 100% 50%);
+  transform: translate(-30%, -90%) rotate(-150deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div5 7s ease-in-out forwards;
+  animation-delay: var(--loading-timer);
+  border-radius: 3rem;
+}
+
+.about-image__animation--container div:nth-child(6) {
+  clip-path: polygon(50% 100%, 50% 50%, 100% 50%);
+  transform: translate(-10%, -90%) rotate(150deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div6 6s ease-in-out forwards;
+  animation-delay: calc(var(--loading-timer) + 2s);
+}
+
+.about-image__animation--container div:nth-child(7) {
+  clip-path: polygon(50% 100%, 50% 50%, 0 50%);
+  transform: translate(10%, -90%) rotate(150deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div7 5s ease-in-out forwards;
+  animation-delay: calc(var(--loading-timer) + 3.5s);
+  border-radius: 3rem;
+}
+
+.about-image__animation--container div:nth-child(8) {
+  clip-path: polygon(50% 100%, 0 100%, 0 50%);
+  transform: translate(30%, -90%) rotate(-125deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div8 1.5s ease-in-out forwards;
+  animation-delay: calc(var(--loading-timer) + 5s);
+  border-radius: 3rem;
+}
+
+@keyframes animate-about-div1 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animate-about-div2 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animate-about-div3 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animate-about-div4 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animate-about-div5 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animate-about-div6 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animate-about-div7 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animate-about-div8 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+/* -------------------------------------------------- */

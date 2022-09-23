@@ -85,58 +85,59 @@
           <h3 class="uppercase">
             <a href="../about.html" target="_blank">Shift manager</a>
           </h3>
-          <p class="project-intro project-description">
-            This was a project given to me by the company where I follow my
-            full-stack web development learning path. I had to create a shift
-            manager application, where users can create accounts, add, delete,
-            and update their shifts. Also, they can see their earnings, and the
-            best earning month in the year.
-          </p>
-          <p class="project-description">
-            I used HTML, CSS, and Vanilla JavaScript to create this shift
-            manager application. And because it's only a learning project, to
-            simulate a database for the app users and their shifts, my
-            application uses Local Storage.
-          </p>
-          <p class="project-description">
-            It is also build with a mobile-first approach, and it is responsive
-            on all devices. I used CSS Grid and Flexbox to create the layout,
-            and as in all my projects I like to use varibles and utility classes
-            to make the code more readable, reusable, and maintainable.
-          </p>
-          <p class="project-description">
-            As additional features I added a dark mode based on the user's
-            system preferences, settings that are also saved in Local Storage
-            for the next time the user visits the app.
-          </p>
-          <p class="project-description">
-            Also, to simulate a 2FA reset password feature, I added an admin
-            account who can approve a reset password of any app user, based on
-            the user's request. This request is sent to the admin's account in a
-            message, and the admin can approve or deny the reset password. If it
-            is denied the user can then delete his account, or if it is approved
-            the user can change his password.
-          </p>
-          <p class="project-description">
-            This is also a project that I will continue to work on and I plan to
-            integrated it with a back-end service, because I believe it can be
-            expanded with many more features, to become a full-fledged shift
-            manager app.
-          </p>
-          <p class="project-description">
-            More about this app you can find in the repo, and you can also try
-            it
-            <a href="" target="_blank">here</a>. Also, the repo contains readme
-            files with more details about the app.
-          </p>
-          <a class="uppercase" href="" target="_blank">View repo</a>
+          <div class="project-description__container flex-column flow">
+            <p class="project-intro project-description">
+              This is a project given to me by the company where I follow my
+              full-stack web development learning path. I had to create a shift
+              manager application, where users can create accounts, add, delete,
+              and update their shifts. Also, they can see their earnings, and
+              the best earning month in the year.
+            </p>
+            <p class="project-description">
+              I used HTML, CSS, and Vanilla JavaScript to create this shift
+              manager application. And because it's only a learning project, to
+              simulate a database for the users and their shifts, my application
+              uses Local Storage. It is built with a mobile-first approach,
+              making it responsive on all devices. I used CSS Grid and Flexbox
+              to create the layout, and as in all of my projects, I used
+              variables and utility classes to make the code more readable,
+              reusable, and maintainable.
+            </p>
+            <p class="project-description">
+              As additional features, I added a dark mode based on the user's
+              system preferences, settings that are also saved in Local Storage
+              for the next time the user visits the app.
+            </p>
+            <p class="project-description">
+              Also, to simulate a 2FA reset password feature, I created an admin
+              account that can approve a reset password of any app user, based
+              on the user's request. This request is sent to the admin's account
+              in a message, and the admin can approve or deny the reset
+              password. If the request is denied the user can then delete his
+              account, or if the request is approved, the user can change his
+              password.
+            </p>
+            <p class="project-description">
+              I added many additional components, and this is also a project
+              that I will continue to work on. For the future I plan to develop
+              it with a back-end service, because I believe it can be expanded
+              with many more features, to become a full-fledged shift manager
+              app.
+            </p>
+            <p class="project-description">
+              More about this app you can find in my GitHub repo, which contains
+              read-me files with more details about the app. Also, you can try
+              it using the link below.
+            </p>
+          </div>
+          <a class="uppercase" href="" target="_blank">Shift manager</a>
         </article>
         <form action="../projects.html">
-          <button>Projects</button>
+          <button class="projects-btn">Projects</button>
         </form>
       </section>
 
-      <section class="contact-section flex-column">
+      <section class="contact-section__projects flex-column">
         <div class="social-media__container flex fs-body">
           <a
             href="https://www.linkedin.com/in/calin-szekely/"
