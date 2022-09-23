@@ -51,7 +51,7 @@
   --fs-body: var(--fs-400);
   --fs-primary-heading: var(--fs-800);
   --fs-secondary-heading: var(--fs-700);
-  --fs-nav: var(--fs-500);
+  --fs-intro: var(--fs-400);
   --fs-btn: var(--fs-300);
 
   --size-100: 0.25rem;
@@ -89,7 +89,7 @@
     --fs-body: var(--fs-500);
     --fs-primary-heading: var(--fs-900);
     --fs-secondary-heading: var(--fs-800);
-    --fs-nav: var(--fs-400);
+    --fs-intro: var(--size-500);
   }
 }
 
@@ -148,6 +148,10 @@ a {
 
 a:hover {
   color: var(--highlight-color-link-hover);
+}
+
+strong {
+  font-weight: var(--fw-600);
 }
 
 body {
@@ -1290,6 +1294,10 @@ article > a::after {
   .projects-section {
     padding: clamp(1rem, 3vw + 1rem, 2.5rem);
   }
+
+  .footer-navigation > li:hover a {
+    color: var(--highlight-color-link-hover);
+  }
 }
 
 @media screen and (min-width: 64em) {
@@ -1426,6 +1434,15 @@ h3 > a::after {
 
 /* About page */
 
+.introduction-heading__about {
+  font-size: var(--fs-intro);
+}
+
+.intro-text__about {
+  box-shadow: hsl(var(--alpha-shadow-color) / 0.2) 0 2em 4em -2em;
+  padding: 0.5rem;
+}
+
 .about-figure {
   max-width: 50%;
   align-self: center;
@@ -1435,6 +1452,24 @@ h3 > a::after {
   display: block;
   width: fit-content;
   align-self: center;
+}
+
+.about-content {
+  padding: 1rem;
+  grid-column: 1 / 3;
+  text-align: justify;
+  text-indent: 2rem;
+}
+
+.main-contact__form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main-contact__form > button {
+  margin: 0.5rem 0;
+  max-width: 15rem;
 }
 
 @media screen and (min-width: 64em) {
@@ -1465,13 +1500,6 @@ h3 > a::after {
     font-size: var(--size-300);
     font-family: var(--ff-handlee);
     color: hsl(var(--alpha-shadow-color) / 0.6);
-  }
-
-  .about-content {
-    padding: 2rem;
-    grid-column: 1 / 3;
-    text-align: justify;
-    text-indent: 2rem;
   }
 }
 
@@ -1590,6 +1618,265 @@ h3 > a::after {
 }
 
 .about-image__animation--container div:nth-child(8) {
+  clip-path: polygon(50% 100%, 0 100%, 0 50%);
+  transform: translate(30%, -90%) rotate(-125deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div8 1.5s ease-in-out forwards;
+  animation-delay: calc(var(--loading-timer) + 5s);
+  border-radius: 3rem;
+}
+
+@keyframes animate-about-div1 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animate-about-div2 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animate-about-div3 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animate-about-div4 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animate-about-div5 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animate-about-div6 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animate-about-div7 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animate-about-div8 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+/* -------------------------------------------------- */
+
+/* Contact */
+
+@media screen and (min-width: 32em) {
+  .contact-details {
+    flex-direction: row;
+  }
+}
+
+input {
+  border: 1px solid hsl(var(--alpha-highlight-color) / 0.2);
+  border-bottom: 2px solid hsl(var(--alpha-shadow-color) / 0.2);
+  border-radius: 1.5vmin;
+  padding: 0.5rem 1rem;
+  box-shadow: hsl(var(--alpha-shadow-color) / 0.2) 0 2em 4em -2em;
+  font-size: var(--fs-500);
+  background-color: transparent;
+  width: 100%;
+  margin-bottom: 0.2rem;
+  transition: all 0.5s ease-in-out;
+}
+
+input:hover {
+  border-bottom: 2px solid var(--secondary-light-color);
+}
+
+input:focus {
+  border-bottom: 2px solid var(--secondary-light-color);
+  outline: none;
+}
+
+textarea {
+  border: 1px solid hsl(var(--alpha-highlight-color) / 0.2);
+  border-bottom: 2px solid hsl(var(--alpha-shadow-color) / 0.5);
+  box-shadow: hsl(var(--alpha-shadow-color) / 0.2) 0 2em 4em -2em;
+  border-radius: 1.5vmin;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  resize: none;
+  font-size: var(--fs-500);
+  width: 100%;
+  margin-bottom: 0.2rem;
+  transition: all 0.5s ease-in-out;
+}
+
+textarea::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: hsl(var(--alpha-highlight-color) / 0.3);
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: hsl(var(--alpha-highlight-color) / 0.4);
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--alpha-highlight-color) / 0.6);
+}
+
+textarea:hover {
+  border-bottom: 2px solid var(--secondary-light-color);
+}
+
+textarea:focus {
+  border-bottom: 2px solid var(--secondary-light-color);
+  outline: none;
+}
+
+form {
+  box-shadow: hsl(var(--alpha-shadow-color) / 0.2) 0 2em 4em -2em;
+  border-radius: 1vmin;
+}
+
+@media screen and (min-width: 64em) {
+  .contact-image__container {
+    height: 40vh;
+  }
+
+  .contact-image__container::after {
+    content: "import profileImg from'./assets/images/calin.codes-profile-image-mobile.jpg';";
+    position: absolute;
+    top: -40%;
+    left: 5%;
+    font-size: var(--size-300);
+    font-family: var(--ff-handlee);
+    color: hsl(var(--alpha-shadow-color) / 0.6);
+  }
+
+  .contact-footer::before {
+    top: -2.5rem;
+    right: -23%;
+  }
+}
+
+/* Contact image container animation */
+
+.contact-image__container {
+  position: relative;
+  width: 90%;
+  min-height: 30vh;
+  align-self: center;
+  justify-self: center;
+  box-shadow: hsl(var(--alpha-highlight-color) / 0.2) 0 4em 9em -1.5em,
+    hsl(var(--alpha-shadow-color) / 0.5) 0 2em 4em -2em;
+  border-radius: 3rem;
+  transform: perspective(75em) rotateX(18deg);
+  border: 1px solid;
+  border-color: hsl(var(--alpha-highlight-color) / 0.1)
+    hsl(var(--alpha-highlight-color) / 0.2)
+    hsl(var(--alpha-highlight-color) / 0.3)
+    hsl(var(--alpha-highlight-color) / 0.4);
+  transition: all 0.5s ease-in-out;
+}
+
+.contact-image__container:hover {
+  transform: perspective(75em) rotateX(0deg);
+}
+
+.contact-image__container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsl(var(--alpha-highlight-color) / 0.2);
+  z-index: 10;
+  border-radius: 3rem;
+}
+
+.contact-image__container div {
+  position: absolute;
+  inset: 0;
+  background: url(./assets/images/calin.codes-profile-image-mobile.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-image__container div:nth-child(1) {
+  clip-path: polygon(50% 0, 0 0, 0 50%);
+  transform: translate(-30%, -90%) rotate(-150deg) scale(0);
+  transform: translate(-30%, -90%) rotate(-150deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div1 8s ease-in-out forwards;
+  animation-delay: var(--loading-timer);
+  border-radius: 3rem;
+}
+
+.contact-image__container div:nth-child(2) {
+  clip-path: polygon(50% 0, 50% 50%, 0 50%);
+  transform: translate(-10%, -90%) rotate(150deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div2 7s ease-in-out forwards;
+  animation-delay: calc(var(--loading-timer) + 2s);
+}
+
+.contact-image__container div:nth-child(3) {
+  clip-path: polygon(50% 0, 50% 50%, 100% 50%);
+  transform: translate(10%, -90%) rotate(150deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div3 6s ease-in-out forwards;
+  animation-delay: calc(var(--loading-timer) + 3.5s);
+}
+
+.contact-image__container div:nth-child(4) {
+  clip-path: polygon(50% 0, 100% 0, 100% 50%);
+  transform: translate(30%, -90%) rotate(-125deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div4 5s ease-in-out forwards;
+  animation-delay: calc(var(--loading-timer) + 5s);
+  border-radius: 3rem;
+}
+
+.contact-image__container div:nth-child(5) {
+  clip-path: polygon(50% 100%, 100% 100%, 100% 50%);
+  transform: translate(-30%, -90%) rotate(-150deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div5 7s ease-in-out forwards;
+  animation-delay: var(--loading-timer);
+  border-radius: 3rem;
+}
+
+.contact-image__container div:nth-child(6) {
+  clip-path: polygon(50% 100%, 50% 50%, 100% 50%);
+  transform: translate(-10%, -90%) rotate(150deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div6 6s ease-in-out forwards;
+  animation-delay: calc(var(--loading-timer) + 2s);
+}
+
+.contact-image__container div:nth-child(7) {
+  clip-path: polygon(50% 100%, 50% 50%, 0 50%);
+  transform: translate(10%, -90%) rotate(150deg) scale(0);
+  overflow: hidden;
+  animation: animate-about-div7 5s ease-in-out forwards;
+  animation-delay: calc(var(--loading-timer) + 3.5s);
+  border-radius: 3rem;
+}
+
+.contact-image__container div:nth-child(8) {
   clip-path: polygon(50% 100%, 0 100%, 0 50%);
   transform: translate(30%, -90%) rotate(-125deg) scale(0);
   overflow: hidden;

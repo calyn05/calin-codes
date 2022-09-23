@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../assets/images/calin.codes-favicon.jpg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calin Codes - Contact Me</title>
+    <script type="module" src="../main.js"></script>
+  </head>
+  <body class="flex-column flow">
+    <header class="primary-header flex">
+      <h1 class="fs-primary__heading ff-handlee">calin.contact</h1>
+      <div class="hamburger-menu__btn flex">
+        <div class="mobile-nav__toggle"></div>
+      </div>
+      <nav>
+        <ul
+          class="primary-navigation underlined-indicators flex-column uppercase"
+        >
+          <li>
+            <a href="../index.html">Home</a>
+          </li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li>
+            <a href="./about.html">About</a>
+          </li>
+          <li class="active" aria-selected="true">
+            <a href="./contact.html">Contact</a>
+          </li>
+          <li class="logo-container">
+            <a href="../index.html">
+              <img src="" alt="logo" id="logo" class="logo" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="homepage-main about-main flex-column flow">
+      <header class="about-main__header flex-column">
+        <figure class="about-figure flex-column">
+          <blockquote
+            cite="https://seochatter.com/web-development-quotes/"
+            class="projects-quote ff-handlee"
+          >
+            <p>Websites promote you 24/7. No employee will do that.</p>
+          </blockquote>
+          <figcaption>
+            <cite class="projects-quote__cite"
+              ><a
+                href="https://seochatter.com/web-development-quotes/"
+                rel="noopener noreferrer external"
+                target="_blank"
+                >Paul Cookson</a
+              ></cite
+            >
+          </figcaption>
+        </figure>
+      </header>
+      <section
+        class="contact-image__container flex center-text"
+        aria-hidden="true"
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <p
+          class="image-animation__text fs-primary__heading ff-handlee"
+          data-text="Contact Me"
+        >
+          Contact Me
+        </p>
+      </section>
+
+      <section class="introduction center-text flow">
+        <h2
+          class="introduction-heading introduction-heading__about ff-handlee flex-column"
+        >
+          Don't hesitate to
+          <span
+            class="intro-name intro-name__about fs-secondary__heading"
+            id="intro-name"
+            data-text="Contact me!"
+            >Contact me!</span
+          >
+        </h2>
+        <p class="intro-text__about ff-primary fs-" id="intro-text">
+          I am opened to new opportunities and I am always looking for new
+          challenges. If you have any questions or you want to work with me,
+          feel free to
+          <strong>contact me.</strong>.
+        </p>
+        <form class="main-contact__form flex-column">
+          <div class="contact-details flex-column">
+            <input
+              type="text"
+              name="name"
+              id="contact-name"
+              placeholder="Name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              id="contact-email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="contact-content flex-column">
+            <input
+              type="text"
+              name="subject"
+              id="contact-subject"
+              placeholder="Subject"
+              required
+            />
+            <textarea
+              name="message"
+              id="contact-message"
+              cols="30"
+              rows="10"
+              placeholder="Message"
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <section class="contact-section__projects flex-column">
+        <div class="social-media__container flex fs-body">
+          <a
+            href="https://www.linkedin.com/in/calin-szekely/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../assets/images/linkedin-round-icon.svg"
+              alt="linkedin"
+              id="linkedin"
+              title="LinkedIn"
+            />
+          </a>
+          <a
+            href="https://github.com/calyn05/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../assets/images/github-icon.svg"
+              alt="github"
+              id="github"
+              title="Github"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/calyn.I.am/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../assets/images/black-instagram-icon.svg"
+              alt="instagram"
+              id="instagram"
+              title="Instagram"
+            />
+          </a>
+
+          <a
+            href="mailto: contact@calin.codes"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../assets/images/email-round-solid-icon.svg"
+              alt="email"
+              id="email"
+              title="Send me an email"
+            />
+          </a>
+          <a
+            href="https://calyn05.github.io/resume-web-page/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Resume web page"
+          >
+            <img src="../assets/images/resume-cv-icon.svg" alt="cv" id="cv" />
+          </a>
+
+          <a
+            href="https://google.com/maps/place/Bucharest"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../assets/images/user-map-location-icon.svg"
+              alt="location"
+              id="location"
+              title="Bucharest, Romania"
+            />
+          </a>
+        </div>
+      </section>
+      <!-- Loading text animation -->
+      <div
+        class="text-animation__container loading-animation flex fs-body"
+        data-visible="false"
+      >
+        <p
+          class="animation-text fs-primary__heading ff-handlee"
+          data-text="calin.codes"
+        >
+          calin.codes
+        </p>
+      </div>
+      <!-- End loading animation -->
+    </main>
+    <footer class="primary-footer contact-footer flex-column flow center-text">
+      <nav>
+        <ul class="footer-navigation flex uppercase">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="fs-body ff-primary">&copy; 2022 Made with 💚 by Calin.Codes.</p>
+    </footer>
+  </body>
+</html>
