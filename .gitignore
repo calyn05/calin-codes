@@ -29,3 +29,4 @@ firestore.rules
 firestore.indexes.json
 firebaseConfig.js
 .firebase
+.firebase/hosting.ZGlzdA.cache
