@@ -119,6 +119,7 @@ ol {
 html,
 body {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 input,
@@ -163,7 +164,6 @@ body {
   font-size: var(--fs-body);
   color: var(--main-txt-color);
   align-items: center;
-  overflow-x: hidden;
 }
 /*  Scrollbar */
 
@@ -479,8 +479,14 @@ canvas {
 /* -------------------------------------------------- */
 
 .introduction {
-  --flow-space: 2rem;
-  padding: 2rem;
+  --flow-space: 1rem;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 32em) {
+  .introduction {
+    padding: 2rem;
+  }
 }
 
 .introduction > p {
