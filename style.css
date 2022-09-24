@@ -1678,12 +1678,6 @@ h3 > a::after {
 
 /* Contact */
 
-@media screen and (min-width: 32em) {
-  .contact-details {
-    flex-direction: row;
-  }
-}
-
 input {
   border: 1px solid hsl(var(--alpha-highlight-color) / 0.2);
   border-bottom: 2px solid hsl(var(--alpha-shadow-color) / 0.2);
@@ -1934,3 +1928,53 @@ form {
 }
 
 /* -------------------------------------------------- */
+
+.error {
+  color: rgb(255, 0, 0);
+  font-size: var(--size-300);
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 32em) {
+  .error {
+    font-size: var(--size-400);
+  }
+}
+
+/* text animation  */
+
+.contact-animation__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  margin-top: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: hsl(var(--alpha-highlight-color) / 0.1);
+  backdrop-filter: blur(1rem);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.contact-animation__container[data-visible="false"] {
+  display: none;
+}
+
+.contact-animation__text {
+  position: relative;
+  color: hsl(var(--alpha-highlight-color) / 0);
+  align-self: center;
+  justify-self: center;
+  overflow: hidden;
+}
+
+.contact-animation__text::before {
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--main-txt-color);
+  animation: animate 2.5s linear;
+}
