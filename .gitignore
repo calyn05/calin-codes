@@ -28,5 +28,4 @@ dist-ssr
 firestore.rules
 firestore.indexes.json
 firebaseConfig.js
-
-map.js
+.firebase
