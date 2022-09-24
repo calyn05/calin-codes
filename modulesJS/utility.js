@@ -109,4 +109,22 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Reveal efect on scroll
+
+const revealElements = document.querySelectorAll(".reveal");
+
+function reveal() {
+  for (let i = 0; i < revealElements.length; i++) {
+    const windowHeight = window.innerHeight;
+    const revealTop = revealElements[i].getBoundingClientRect().top;
+    const revealPoint = 50;
+
+    if (revealTop < windowHeight - revealPoint) {
+      revealElements[i].classList.add("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+
 export { mobileMenuBtn, toggleMenu, textAnimation, animationContainer };

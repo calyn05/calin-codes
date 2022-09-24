@@ -35,11 +35,13 @@ if (contactForm !== null) {
     const email = getInputValue("contact-email");
     const subject = getInputValue("contact-subject");
     const message = getInputValue("contact-message");
+    const dateAndTime = new Date();
     const data = {
       name,
       email,
       subject,
       message,
+      dateAndTime,
     };
     if (!validateEmail(email)) {
       const emailError = document.createElement("p");
