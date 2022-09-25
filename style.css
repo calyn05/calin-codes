@@ -114,6 +114,7 @@ html:focus-within {
 ul,
 ol {
   list-style: none;
+  text-indent: 0;
 }
 
 html,
