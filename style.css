@@ -1195,6 +1195,13 @@ h4::after {
   text-transform: lowercase;
 }
 
+.project-intro {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+  text-align: justify;
+  text-indent: 1rem;
+}
+
 .project-description {
   font-size: var(--fs-400);
   font-weight: var(--fw-400);
