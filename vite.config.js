@@ -12,6 +12,7 @@ export default defineConfig({
         wordpress: resolve(__dirname, "./pages/projects/wordpress-blog.html"),
         portfolio: resolve(__dirname, "./pages/projects/calin-codes.html"),
         shifter: resolve(__dirname, "./pages/projects/shift-manager.html"),
+        advice: resolve(__dirname, "./pages/projects/advice-generator.html"),
         404: resolve(__dirname, "404.html"),
         firebaseConfig: resolve(__dirname, "firebaseConfig.js"),
       },
