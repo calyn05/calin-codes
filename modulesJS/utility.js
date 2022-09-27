@@ -1,6 +1,7 @@
 const mobileMenuBtn = document.querySelector(".hamburger-menu__btn");
 const navigationOpen = document.querySelector(".primary-navigation");
 let menuOpen = false;
+
 function toggleMenu() {
   if (!menuOpen) {
     mobileMenuBtn.classList.add("open");
