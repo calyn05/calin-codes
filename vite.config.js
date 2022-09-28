@@ -6,6 +6,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
+        notfound: resolve(__dirname, "404.html"),
         projects: resolve(__dirname, "./pages/projects.html"),
         about: resolve(__dirname, "./pages/about.html"),
         contact: resolve(__dirname, "./pages/contact.html"),
@@ -13,7 +14,8 @@ export default defineConfig({
         portfolio: resolve(__dirname, "./pages/projects/calin-codes.html"),
         shifter: resolve(__dirname, "./pages/projects/shift-manager.html"),
         advice: resolve(__dirname, "./pages/projects/advice-generator.html"),
-        404: resolve(__dirname, "404.html"),
+        resume: resolve(__dirname, "./pages/projects/resume.html"),
+        github: resolve(__dirname, "./pages/projects/github.html"),
         firebaseConfig: resolve(__dirname, "firebaseConfig.js"),
       },
     },
