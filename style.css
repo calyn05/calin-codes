@@ -665,6 +665,7 @@ button {
   color: inherit;
   cursor: pointer;
   transition: background-color 0.25s;
+  overflow: hidden;
 }
 
 button::after {

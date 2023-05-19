@@ -4,8 +4,9 @@
     "ignore": [],
     "rewrites": [
       {
-        "source": "./**",
-        "dinamicLinks": true
+        "source": "**",
+        "dinamicLinks": true,
+        "destination": "/index.html"
       }
     ],
     "cleanUrls": true,

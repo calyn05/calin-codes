@@ -13,7 +13,7 @@
   </head>
   <body class="flex-column flow">
     <header class="primary-header flex">
-      <h1 class="fs-primary__heading ff-handlee">calin.wordpress</h1>
+      <h1 class="fs-primary__heading ff-handlee">calin.manager</h1>
       <div class="hamburger-menu__btn flex">
         <div class="mobile-nav__toggle"></div>
       </div>
@@ -71,72 +71,111 @@
         />
       </picture>
 
-      <section class="project-page__section center-text flow">
+      <section class="projects-section center-text flow">
         <header class="flex-column">
           <h2
             class="introduction__heading fs-primary__heading ff-handlee"
-            data-text="WordPress"
+            data-text="Ng-Shift"
           >
-            WordPress
+            Ng-Shift
+          </h2>
+          <h2
+            class="introduction__heading fs-primary__heading ff-handlee"
+            data-text="Angular app"
+          >
+            Angular app
           </h2>
         </header>
-        <article
-          class="project-page__article flex-column flow"
-          id="cryptofiveo-article"
-        >
+
+        <article class="flex-column flow">
           <h3 class="uppercase">
             <a
-              href="https://cryptofiveo.com/"
+              href="https://ng-shift.calin.codes/"
               rel="noopener noreferrer external"
               target="_blank"
-              >Cryptofiveo.com</a
+              >Ng-Shift</a
             >
           </h3>
           <div class="project-description__container flex-column flow">
             <p class="project-description reveal">
-              Website is down for the moment. I intend to update it soon, and
-              code it from scratch with Javascript, CSS, and HTML5, instead of
-              using WordPress. But, I don't have much time to do it right now.
+              This is the final project for the Front-End part, given to me by
+              the company where I follow my full-stack web development learning
+              path. I had to create a
+              <strong>shift manager application</strong> in
+              <strong>Angular</strong>, connected with
+              <strong>Firestore database</strong> and using
+              <strong>Firebase Auth</strong> for authentication. The app has two
+              parts, the user side and the admin side, with a small backend in
+              <strong>Node.js</strong> and <strong>Express.js</strong> using the
+              <strong>Firebase Admin SDK</strong>.
             </p>
             <p class="project-description reveal">
-              Approximately 3 years ago I started this personal project, and
-              also my <strong>passion for web development</strong> formed. I
-              didn't have any experience in web development before, and I spent
-              countless nights learning the <strong>WordPress CMS</strong>, and
-              especially <strong>SEO</strong>, all by myself.
+              The application is a shift manager for a company that has multiple
+              locations and multiple employees. The user can create an account,
+              log in, and create a shift for a specific location and a specific
+              employee. The user can also edit or delete a shift, and can also
+              edit his profile, change his password, or delete his account.
             </p>
             <p class="project-description reveal">
-              This was my first project, and I wanted to create a blog that
-              would be easy to update, maintain, and write blog posts fast. I
-              chose to use WordPress because it is a popular CMS and it is easy
-              to use.
+              It is built with a <strong>mobile-first approach</strong>, making
+              it responsive on all devices. I also used CSS Grid and Flexbox to
+              create the layout, and as in all of my projects, I used variables
+              and utility classes to make the code more readable, reusable, and
+              maintainable.
             </p>
             <p class="project-description reveal">
-              With this blog I also wanted to create a website that would be
-              easy to navigate and would be
-              <strong>responsive on all devices</strong>. I didn't have much
-              time to update it lately, but the website is still up and running.
+              The admin side is a little bit different. The admin can create an
+              account, log in, and see all the shifts created by all the users.
+              The admin can also edit or delete any shift, and can also edit
+              users profile, change their passwords, or delete their accounts.
             </p>
             <p class="project-description reveal">
-              Also, as a future personal project, I have in plan to update it
-              and <strong>code it from scratch</strong> with
-              <strong>Javascript</strong>, <strong>CSS</strong>, and
-              <strong>HTML5</strong>, instead of using WordPress. I was thinking
-              to create it with Angular, but as far as I know it is not SEO
-              friendly, so probably this is a better solution for me, because
-              SEO matters a lot for this website.
+              For the admin part, I built a small <strong>backend</strong> in
+              <strong>Node.js</strong> and <strong>Express.js</strong>, using
+              the <strong>Firebase Admin SDK</strong>. The backend is deployed
+              on <strong>Render</strong>, and it is used for some strong
+              privileges, like deleting a user or editing a user's password and
+              email. These were the requirements for the project.
             </p>
+            <p class="project-description reveal">
+              Because I wanted to learn more about <strong>Angular</strong>, I
+              used <strong>Angular Material</strong> for the UI, and I also used
+              <strong>Angular Fire</strong> to connect the app with the
+              <strong>Firebase</strong> services.
+            </p>
+            <p class="project-description reveal">
+              More about this app you can find in my
+              <strong>GitHub repo</strong>, which contains readme files with
+              more details about the app. Also, you can try it using the link
+              below, being deployed on <strong>Firebase</strong> on a subdomain
+              of my portfolio website (calin.codes).
+            </p>
+            <p class="project-description reveal">
+              <strong>NOTE</strong> that the app will use the REST API deployed
+              on a free plan on <strong>Render</strong>, that is why it will
+              take a few seconds to load the admin side, because the server will
+              be sleeping.
+            </p>
+            <ul class="reveal">
+              <h3>Admin side testing</h3>
+              <li>username: admin1</li>
+              <li>password: 12Saaa@</li>
+            </ul>
+            <ul class="reveal">
+              <h3>User side testing</h3>
+              <li>username: willdoe</li>
+              <li>password: 12Saaa@</li>
           </div>
           <a
             class="uppercase"
-            href="https://cryptofiveo.com/"
-            target="_blank"
+            href="https://ng-shift.calin.codes/"
             rel="noopener noreferrer external"
-            >Visit website</a
+            target="_blank"
+            >Ng-Shift</a
           >
         </article>
-        <form action="./calin-codes.html">
-          <button class="projects-btn">Next Project</button>
+        <form action="./wordpress-blog.html">
+          <button class="projects-btn">Next project</button>
         </form>
       </section>
 

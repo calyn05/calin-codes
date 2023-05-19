@@ -10,6 +10,7 @@ export default defineConfig({
         projects: resolve(__dirname, "./pages/projects.html"),
         about: resolve(__dirname, "./pages/about.html"),
         contact: resolve(__dirname, "./pages/contact.html"),
+        ngShift: resolve(__dirname, "./pages/projects/ng-shift.html"),
         wordpress: resolve(__dirname, "./pages/projects/wordpress-blog.html"),
         portfolio: resolve(__dirname, "./pages/projects/calin-codes.html"),
         shifter: resolve(__dirname, "./pages/projects/shift-manager.html"),
